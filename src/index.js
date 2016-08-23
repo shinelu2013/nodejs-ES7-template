@@ -1,11 +1,13 @@
 class TestClass {
-    constructor(){
-        this.val = 10;
+    constructor(value){
+        this.val = value;
     }
     getVal(){
         return this.val;
     }
 }
 
-var test = new TestClass();
-console.log(test.getVal());
+var a = new TestClass(10);
+var b = new TestClass(20);
+console.log(a.getVal());
+console.log(b.getVal());
