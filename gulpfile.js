@@ -6,6 +6,7 @@ var sourcemaps = require('gulp-sourcemaps');
 
 const SRC = 'src/**/*.js';
 const DEST = 'build';
+const WATCH_LIST = ['src/**/*.js', 'index.js'];
 
 gulp.task('babelify', function(){
     return gulp.src(SRC)
@@ -35,7 +36,7 @@ gulp.task('babelify', function(){
 });
 
 gulp.task('watch', function(){
-    return gulp.watch(['src/**/*.js', 'index.js'], ['babelify']);
+    return gulp.watch(WATCH_LIST, ['babelify']);
 });
 
 gulp.task('default', ['watch', 'babelify']);
