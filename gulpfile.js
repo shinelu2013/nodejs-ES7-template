@@ -14,6 +14,10 @@ gulp.task('babelify', function(){
         .pipe(babel({
             presets: ['es2015']
         }))
+        .on('error', function(err){
+            console.log(err.stack);
+            this.emit('end');
+        })
         .pipe(sourcemaps.write({
             includeContent: false,
             sourceRoot: 'src'
@@ -26,5 +30,5 @@ gulp.task('watch', function(){
     return gulp.watch(['src/**/*.js', 'index.js'], ['babelify']);
 });
 
-gulp.task('default', ['babelify', 'watch']);
+gulp.task('default', ['watch', 'babelify']);
 
