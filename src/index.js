@@ -1,3 +1,5 @@
-import fun from './module';
+var fun = require('./module');
+var tmp = require('./task/tmp');
 
+tmp();
 fun();

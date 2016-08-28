@@ -14,13 +14,13 @@ gulp.task('babelify', function(){
         .pipe(babel({
             presets: ['es2015']
         }))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write({includeContent: false, sourceRoot: 'src'}))
         .pipe(gulp.dest(DEST));
         // uglify
 });
 
 gulp.task('watch', function(){
-    return gulp.watch(['src/**/*.js'], ['babelify']);
+    return gulp.watch(['src/**/*.js', 'index.js'], ['babelify']);
 });
 
 gulp.task('default', ['babelify', 'watch']);
