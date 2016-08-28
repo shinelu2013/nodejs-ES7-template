@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var babel = require('gulp-babel');
-var changed = require('gulp-changed');
 var sourcemaps = require('gulp-sourcemaps');
+//var changed = require('gulp-changed');
 //var uglify = require('gulp-uglify');
 
 const SRC = 'src/**/*.js';
@@ -14,8 +14,11 @@ gulp.task('babelify', function(){
         .pipe(babel({
             presets: ['es2015']
         }))
-        .pipe(sourcemaps.write({includeContent: false, sourceRoot: 'src'}))
-        .pipe(gulp.dest(DEST));
+        .pipe(sourcemaps.write({
+            includeContent: false,
+            sourceRoot: 'src'
+        }))
+        .pipe(gulp.dest(DEST))
         // uglify
 });
 

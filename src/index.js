@@ -1,5 +1,3 @@
-var fun = require('./module');
-var tmp = require('./task/tmp');
+var func = require('./func');
 
-tmp();
-fun();
+func();
