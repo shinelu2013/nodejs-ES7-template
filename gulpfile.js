@@ -39,5 +39,5 @@ gulp.task('watch', function(){
     return gulp.watch(WATCH_LIST, ['babelify']);
 });
 
-gulp.task('default', ['watch', 'babelify']);
+gulp.task('default', ['babelify', 'watch']);
 
